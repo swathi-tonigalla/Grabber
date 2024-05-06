@@ -1,0 +1,23 @@
+<div class="flex justify-between">
+  <p class="text-xl text-bold text-black-600">Please Upload Files Below.</p>
+  <button class="flex justify-end"  color="warn" ></button>
+
+</div>
+<div class="dropzone" fileDragDrop (filesChangeEmiter)="onFileChange($event,'lookup')"
+    style="width: 100%; height: 70px;">
+    <div class="input_field flex flex-col w-max h-full mx-auto text-center justify-center static">
+        <label>
+            <input class="text-sm cursor-pointer w-36 hidden" type="file" name="file" id="file"
+                (change)="onFileChange($event.target,'lookup')" multiple
+                accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+            <div class="text-slate-600 rounded font-semibold cursor-pointer p-1 px-3">
+                DRAG AND UPLOAD</div>
+        </label>
+        <div class="title text-slate-500">Accepted format xlsx/csv</div>
+    </div>
+</div>
+<div class="float-bottom-right">
+  <button  (click)="fileUpload()" >
+      ADD
+  </button>
+</div>
